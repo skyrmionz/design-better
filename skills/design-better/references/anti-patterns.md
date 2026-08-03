@@ -17,6 +17,9 @@ Sources: Jim Nielsen "The AI Aesthetic" (2026), Web Designer Depot on vibe codin
 
 - **The generic hero:** centered headline + subhead + two buttons + background gradient blob. *AI: the average of 10,000 SaaS heroes.* → Break symmetry — offset the headline, use a single CTA, replace the blob with a specific illustration, or lead with a different section type.
 - **Cookie-cutter section rhythm:** hero → 3-col features → testimonials → CTA, every time. *AI: the "standard template".* → Vary section types and grid columns; organize by the real user journey.
+- **Every section is the same icon-card-grid** on the same background. *AI: found one section pattern and repeated it down the page.* → Alternate layout (grid / split / feature / list) and background (white / tinted) so the page has cadence; adjacent sections must not match.
+- **Orphan card** — a 3-item set in a 2-col grid, leaving a lonely third card on its own row (or any grid whose columns don't divide the count). *AI: set the grid once, never checked it against the data.* → Match columns to the item count; N items get an N-col or evenly-dividing grid.
+- **Numbered sections** (01 / 02 / 03 eyebrows) when nothing is sequential. *AI: decorative ordinal as a section-template habit.* → Drop the numbers unless the order is genuinely a sequence the reader follows.
 - **Mathematically perfect symmetric grids with no hierarchy.** *AI: follows the grid with terrifying precision; perfection now reads as suspicious.* → Introduce intentional asymmetry; make the primary thing dramatically larger (Von Restorff).
 - **Identical content density on every page.** *AI: uniform spacing rules ignore content.* → Let dense pages be dense and landing pages breathe.
 - **Generic 5-link nav:** Home / Features / Pricing / About / Contact. *AI: the "average" nav.* → Name sections around user goals ("Build", "Deploy", "Monitor").
@@ -32,6 +35,7 @@ Sources: Jim Nielsen "The AI Aesthetic" (2026), Web Designer Depot on vibe codin
 
 - **Glassmorphism on everything** — `backdrop-filter: blur()` on every card/nav/modal. *AI: 2021–2023 trend overrepresented as "modern".* → Reserve glass for genuine floating layers (nav, modals); most cards don't need it.
 - **Gradient-mesh blobs / blurred orbs** in backgrounds. *AI: a no-decision way to add "visual interest".* → Use brand patterns, illustrations, or subtle texture; geometric/intentional gradients only.
+- **Gradient-filled text** (`background-clip: text` on headings). *AI: a decorative-not-meaningful flourish and a top mechanical tell — the impeccable detector flags it.* → Solid color for headings and body; let type carry weight through scale and weight, not a gradient.
 - **Glow on everything** (big-blur box-shadow on buttons/cards/text). *AI: "polish" without understanding light.* → Shadows show elevation, not decoration; follow an elevation scale.
 - **Long / Flat-2.0 shadows.** *AI: oversampled flat-design era.* → Remove them; use elevation-appropriate shadows.
 - **Heavy floating-card drop shadows** (`0 10px 40px`). *AI: "depth = big shadow".* → Subtle borders or light shadows for cards; strong shadows only for modals/dropdowns.
@@ -73,6 +77,16 @@ Sources: Jim Nielsen "The AI Aesthetic" (2026), Web Designer Depot on vibe codin
 - **Streaming / shimmering text** on non-AI content. *AI: the "AI is thinking" pattern.* → Reserve for actual generated content; else immediate or simple fade-in.
 - **Status dots** (active/inactive colored dots) everywhere. *AI: decorative status theater.* → Only when the data genuinely needs a status indicator.
 - **Floating / bouncing / pulsing** idle motion. *AI: generated-demo flourish.* → Only when the user asks, or in a kiosk/experience context.
+
+## Process (how the work gets made — the tells that produce all the others)
+
+These aren't visual patterns; they're the *working habits* that generate everything above. They are the most important entries in this file, because a clean process prevents the tells instead of catching them after.
+
+- **One-shotting** — generating a whole page or site in a single pass, then hunting for problems. *AI: optimizes for a fast-looking artifact over a correct one; every rule in this file gets skipped in the rush and "fixed" later, badly.* → Gate the work: theme first, ask before building, roadmap by section, build and self-review one section at a time. A running page that skipped the process is a failure, not a deliverable.
+- **Skipping the intake** — starting to build without asking the user the decisions that are theirs: component sources (library vs hand-rolled), 3D/signature visual, exact fonts and sourcing, real copy. *AI: assumes to avoid the friction of asking.* → Hard stop before code; use the AskUserQuestion tool with concrete options. A rejected or redirected question means ask a *better* question, not stop asking.
+- **Silent substitution** — the user dictated Avant Garde and you shipped Space Grotesk because it was easier to wire up; they said "bright blue" and you reached for the default. *AI: swaps a dictated constraint for a convenient one and says nothing.* → A stated font/color/library/word-to-avoid is binding. If you can't meet it, stop and say so — never quietly swap. This is the single worst failure the skill can make.
+- **Green-scan complacency** — treating a clean detector run or a high heuristic score as permission to stop. *AI: trusts the automated number over the user's eye.* → A clean detector is necessary, not sufficient. It catches mechanical tells and defers taste, copy cadence, and layout rhythm to your judgment. If the user's eyes see "generic," it is generic regardless of the score.
+- **Non-collaboration** — treating the skill as a rulebook to satisfy rather than a process to work *through* with the user. *AI: races to "done" instead of pausing to plan and confirm.* → Pause, plan, surface decisions, confirm the roadmap. Collaboration is the deliverable's quality control, not overhead.
 
 ---
 

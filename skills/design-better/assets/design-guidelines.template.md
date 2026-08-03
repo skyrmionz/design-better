@@ -4,6 +4,24 @@
 >
 > The **Dark Navy Glass** preset is pre-filled as a worked example — overwrite it with your actual theme.
 
+## 0. Dictated by the user (binding — never silently substitute)
+
+Record every constraint the user stated verbatim. These override defaults, presets, and your taste. If one cannot be met (font unlicensed, library incompatible, asset missing), stop and raise it with the user — do not swap in an easier choice. Re-check this ledger in every section's self-review.
+
+| # | Dictated | Where it applies | Honored? |
+|---|---|---|---|
+| 1 | <e.g. "bright blues, white + silver accents"> | palette | ☐ |
+| 2 | <e.g. "Avant Garde headings, SF Pro body"> | typography | ☐ |
+| 3 | <e.g. "use Aceternity components"> | component sources | ☐ |
+| 4 | <e.g. "Three.js hero motif"> | signature visual | ☐ |
+
+## Decisions the user made at intake (Gate 2)
+
+- **Component sources:** <libraries (Aceternity, …) vs hand-rolled — as chosen>
+- **3D / signature visual:** <R3F motif / light accent / none>
+- **Fonts & sourcing:** <exact faces + how sourced: licensed files / CDN / system stack>
+- **Copy:** <provided by user / labeled placeholder>
+
 ## 1. Brand identity & tone
 
 - **What this is:** <one line — what the product/site is>
@@ -73,6 +91,8 @@ Name every page and its sections; build and self-review one section at a time.
 
 ## 9. Self-review & gate
 
-- [ ] Each section passed the `design-rules.md` checklist (readable, no clipping, on-scale spacing, size-family conformance, states present, on-theme, motion sane, responsive).
-- [ ] Ran `npx impeccable` critique/audit; reconciled with its `DESIGN.md`; fixed findings.
+- [ ] Ran the Gate 2 intake before writing code; the user's decisions above are recorded, not assumed.
+- [ ] Every constraint in the section-0 dictation ledger is honored in every section (no silent substitution).
+- [ ] Each section passed the `design-rules.md` checklist (readable, no clipping, on-scale spacing, size-family conformance, no orphan cards, varied rhythm, states present, on-theme, motion sane, responsive).
+- [ ] Ran `npx impeccable` critique/audit; reconciled with its `DESIGN.md`; fixed findings. (Clean detector = necessary, not sufficient — judgment still applies.)
 - [ ] Ran the anti-pattern pass and the Three-Question Test (`anti-patterns.md`).

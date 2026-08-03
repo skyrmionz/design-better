@@ -13,6 +13,7 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **60-30-10 distribution.** ~60% dominant/neutral, 30% secondary, 10% accent. *Why: keeps accent meaningful and the page calm.*
 - **Dark mode is never pure black.** Base `#0a0a0a`–`#1a1a1a`; body text `#e0e0e0`–`#f5f5f5`, not pure white. *Why: pure black + pure white smears on OLED and strains eyes; it also reads as a lazy inversion.*
 - **Gradients get grain.** Overlay subtle noise/texture on any gradient. *Why: perfectly smooth gradients are a flat-AI tell; grain reads as crafted.*
+- **Never gradient-fill text.** Headings and body stay a solid color. *Why: `bg-clip-text` gradient headings are decorative-not-meaningful and a top mechanical AI tell (the impeccable detector flags them).*
 
 ## Typography
 
@@ -38,6 +39,8 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **Section-by-section, not all-at-once.** Build and review one section before the next. *Why: catches drift early.*
 - **Vary content density by page type.** Dense legal pages, airy landing pages. *Why: identical density everywhere is an AI uniformity tell.*
 - **No cards-within-cards.** *Why: nested containers muddy hierarchy and look generated.*
+- **No orphan cards.** Match the grid columns to the item count; N items get an N-column (or evenly-dividing) grid, never a 2-col grid with a lonely third card wrapping to its own row. *Why: a stranded last card is the clearest sign the grid was set once and never checked against the data.*
+- **Vary section rhythm.** Adjacent sections must not repeat the same icon-card-grid back to back; alternate the layout (grid / split / feature / list) and the background (white / tinted) so the page has cadence. *Why: identical section after identical section is the strongest "template, not designed" tell after the middle of the fold.*
 - **No colored left-edge borders / side-tab accent stripes.** *Why: a recognizable generated-component look.*
 - **Nested radius = outer radius − gap.** *Why: concentric corners look right; equal radii look wrong.* (See `design-fundamentals.md`.)
 - **Max content widths:** reading 640–768px, marketing 1200–1440px, forms 480–600px. *Why: full-bleed text and forms read as unconsidered.*
@@ -77,9 +80,12 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 
 ## Process
 
-- **Write `design-guidelines.md` and refer back to it.** *Why: the doc is what keeps section 12 consistent with section 1.*
-- **Self-review every section** (checklist below). *Why: drift compounds; catch it per section.*
-- **Run the impeccable critique gate** before "done". *Why: an external critique catches what you've gone blind to.*
+- **Never one-shot.** Do not generate a whole page/site in one pass and look for problems after. *Why: post-hoc cleanup of a one-shot is how every rule below gets skipped; the process exists to prevent exactly this.*
+- **Ask before building (hard stop).** Run an intake before writing code: audience, tone, pages, copy, and the user's decisions — component sources (libraries vs hand-rolled), 3D/signature visual, exact fonts and how they're sourced. Use the AskUserQuestion tool with concrete options. *Why: these are the user's calls; assuming them silently is the collaboration failure the skill is built to stop. A redirected question means ask better, not stop asking.*
+- **Honor dictated constraints; never silently substitute.** A stated font/color/library/word-to-avoid is binding. If you can't meet it, stop and say so — don't quietly swap in an easier choice. *Why: a silent substitution of something the user dictated is the single worst failure this skill can make.*
+- **Write `design-guidelines.md` and refer back to it.** Include a "Dictated by the user" ledger. *Why: the doc is what keeps section 12 consistent with section 1, and the ledger is what you check each section against.*
+- **Self-review every section** (checklist below), including the dictation check. *Why: drift compounds; catch it per section.*
+- **Run the impeccable critique gate** before "done", but treat a clean detector as necessary, not sufficient. *Why: the detector catches mechanical tells and defers taste/copy/rhythm to your eye; a green scan or high heuristic score is not permission to skip judgment.*
 - **Run the Three-Question Test** (see `anti-patterns.md`). *Why: final gut-check against statistical choices.*
 
 ---
@@ -94,6 +100,9 @@ Run on every section before moving to the next:
 4. **Size families conform?** Buttons and cards use the chosen family sizes, not one-offs.
 5. **States present?** Hover, focus-visible, active, disabled, loading/empty where relevant.
 6. **On-theme?** Colors, fonts, radius, icon set all match `design-guidelines.md`.
-7. **Motion sane?** Transitions present, ease-out, transform/opacity only, respects reduced-motion.
-8. **Responsive?** Works mobile-first; reflows cleanly at 640/768/1024/1280.
-9. **No anti-patterns?** Quick scan against `anti-patterns.md` (no purple-default, ghost CTA, emoji icon, kicker, card-in-card, blurred orb, status dot).
+7. **Dictation honored?** Every constraint in the "Dictated by the user" ledger is met in this section — the actual fonts, colors, libraries the user named, with no silent substitution.
+8. **Grid fits the count?** No orphan card stranded on its own row; columns match the item count.
+9. **Rhythm varies?** This section doesn't repeat the previous one's layout+background; the page has cadence.
+10. **Motion sane?** Transitions present, ease-out, transform/opacity only, respects reduced-motion.
+11. **Responsive?** Works mobile-first; reflows cleanly at 640/768/1024/1280.
+12. **No anti-patterns?** Quick scan against `anti-patterns.md` (no purple-default, ghost CTA, emoji icon, sparkle, gradient text, kicker, card-in-card, blurred orb, status dot, numbered section).
