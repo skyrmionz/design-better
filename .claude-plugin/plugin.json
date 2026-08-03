@@ -1,0 +1,21 @@
+{
+  "name": "design-better",
+  "description": "A design process + house ruleset that helps any coding agent build polished, consistent web UI and avoid the 'vibe-coded' AI look. Theme-first workflow, anti-pattern catalog, craft fundamentals, and three ready presets.",
+  "version": "0.1.0",
+  "author": {
+    "name": "skyrmionz"
+  },
+  "homepage": "https://github.com/skyrmionz/design-better",
+  "repository": "https://github.com/skyrmionz/design-better",
+  "license": "Apache-2.0",
+  "keywords": [
+    "design",
+    "ui",
+    "web-design",
+    "design-system",
+    "frontend",
+    "css",
+    "anti-patterns",
+    "skill"
+  ]
+}
