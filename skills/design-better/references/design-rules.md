@@ -22,6 +22,9 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **Limit to 2–3 weights**, each with a clear job. *Why: shipping all 9 weights signals no decision was made.*
 - **Consistent header scale across the site.** Same H1/H2/H3 sizes and padding everywhere. *Why: per-page reinvented headers destroy coherence.*
 - **Line length 45–75ch; body line-height ~1.5, headings 1.1–1.2.** *Why: readability fundamentals; agents routinely ship full-width text lines.*
+- **No widows or orphans.** No heading, CTA, or short paragraph may strand a single word (or two-word fragment) on its own last line. Use `text-wrap: balance` on headings/short blocks, `text-wrap: pretty` on body; tune the measure or add `&nbsp;` where needed. *Why: a lonely trailing word ("…the rest.", "…a minute.", "…with you.") is a constant AI tell — it means the line breaks were never actually looked at.*
+- **Tune the measure to the copy, not to a round number.** Set `max-width` so the resulting line count and ragged edge look intentional; don't let a paragraph cramp to four lines when three read better. *Why: an arbitrary `max-w-*` ships whatever break falls out; deliberate measure reads as crafted.*
+- **Balance copy across a set of siblings.** Cards/tiles in a row should have title line-counts that match and descriptions within one line of each other. *Why: one 1-line title beside a 2-line title, with descriptions of every length, makes a row of "siblings" look assembled by different hands.*
 - **Ease off em-dashes.** *Why: em-dash overuse is a recognizable AI-writing tell.*
 
 ## Buttons & interaction
@@ -31,6 +34,7 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **Glassy or solid only.** No ghost/outline buttons as primary CTAs. *Why: ghost CTAs are a flat-era AI pattern and convert worse.*
 - **Every button has a hover effect** and a smooth transition. *Why: static buttons feel dead; instant changes feel broken.*
 - **One primary action per view.** Secondary actions are visually quieter. *Why: two equal CTAs = no CTA.*
+- **Button label clears 4.5:1 against the button's own fill.** Pick the on-color from the fill, not the page; verify each button (and its hover state) as a pair. *Why: gray text on a dark fill is technically present but invisible — a label you can't read is a broken button.*
 - **Every interactive element has a transition** (~150–300ms, ease-out). *Why: motion communicates state change and feels alive without being distracting.*
 
 ## Layout & spacing
@@ -40,6 +44,8 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **Vary content density by page type.** Dense legal pages, airy landing pages. *Why: identical density everywhere is an AI uniformity tell.*
 - **No cards-within-cards.** *Why: nested containers muddy hierarchy and look generated.*
 - **No orphan cards.** Match the grid columns to the item count; N items get an N-column (or evenly-dividing) grid, never a 2-col grid with a lonely third card wrapping to its own row. *Why: a stranded last card is the clearest sign the grid was set once and never checked against the data.*
+- **No orphan content on its own line.** A lone list item or trailing element ("Self-host option" sitting alone below a row) must fold back into its group. *Why: a marooned item breaks the group's rhythm and signals the item count was never checked against the layout.*
+- **Reserve space for expandable content; sections don't grow on interaction.** An accordion/FAQ must design for its open state — the section's footprint stays stable when items expand, either by reserving the space or animating the reveal in place. *Why: a section that visibly jumps taller when something opens is an interaction-stability failure and reads as unconsidered.*
 - **Vary section rhythm.** Adjacent sections must not repeat the same icon-card-grid back to back; alternate the layout (grid / split / feature / list) and the background (white / tinted) so the page has cadence. *Why: identical section after identical section is the strongest "template, not designed" tell after the middle of the fold.*
 - **No colored left-edge borders / side-tab accent stripes.** *Why: a recognizable generated-component look.*
 - **Nested radius = outer radius − gap.** *Why: concentric corners look right; equal radii look wrong.* (See `design-fundamentals.md`.)
@@ -60,6 +66,7 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **No over-bouncy springs** (`cubic-bezier(0.68,-0.55,0.265,1.55)`). *Why: "interesting" easings applied without reason read as AI.*
 - **Animate transform/opacity only** (see `performance-and-layout.md`). *Why: animating layout/box-shadow/background thrashes the compositor.*
 - **No streaming/shimmering text** on non-AI content. *Why: it's now the "AI is thinking" signifier.*
+- **Smooth-scroll in-page navigation.** Anchor/nav links scroll to their target (`scroll-behavior: smooth`, gated behind `prefers-reduced-motion: no-preference`), with `scroll-margin-top` so targets clear a sticky header. *Why: a bare `#anchor` teleports; the abrupt cut reads as broken, not instant.*
 - **Respect `prefers-reduced-motion`.** *Why: accessibility and polish.*
 
 ## Copy
@@ -69,6 +76,7 @@ The complete house ruleset. Each rule has a one-line **why** so you apply judgme
 - **No fake testimonials.** Real, attributed (name + company + photo), or none. *Why: "John D." placeholders are an obvious tell.*
 - **Get real copy from the user**; placeholder only when labeled. *Why: inventing final copy misrepresents the product.*
 - **Limit redundancy** — don't repeat the same word/theme across adjacent sections. *Why: repetition is an AI-generation artifact.*
+- **Trust the reader; don't state what the design already says.** Cut over-literal labels ("All systems operational" beside a green dot, "Click here to learn more"). *Why: announcing what the layout already conveys is the subtlety-free AI voice; implying rather than spelling out is a human tell.*
 
 ## Icons & imagery
 
@@ -105,4 +113,11 @@ Run on every section before moving to the next:
 9. **Rhythm varies?** This section doesn't repeat the previous one's layout+background; the page has cadence.
 10. **Motion sane?** Transitions present, ease-out, transform/opacity only, respects reduced-motion.
 11. **Responsive?** Works mobile-first; reflows cleanly at 640/768/1024/1280.
-12. **No anti-patterns?** Quick scan against `anti-patterns.md` (no purple-default, ghost CTA, emoji icon, sparkle, gradient text, kicker, card-in-card, blurred orb, status dot, numbered section).
+12. **Line breaks clean?** No widow/orphan (no lone last word) in any heading, CTA, or short paragraph, at every breakpoint; the measure suits the copy, not a round number.
+13. **Set balanced?** Sibling cards/tiles have matching title line-counts and descriptions within a line of each other; no item stranded alone on its own line.
+14. **Labels readable on their fill?** Every button/badge label clears 4.5:1 against its *own* background (default and hover).
+15. **Interaction stable?** Expanding content (accordions, toggles) doesn't grow the section or shift surrounding layout; in-page links smooth-scroll, not jump.
+16. **Copy trusts the reader?** No over-literal label restating what the design already conveys.
+17. **No anti-patterns?** Quick scan against `anti-patterns.md` (no purple-default, ghost CTA, emoji icon, sparkle, gradient text, kicker, card-in-card, blurred orb, status dot, numbered section).
+
+> **Read the rendered page, not the source.** Notes 12–15 only surface when you look at the actual output — where lines truly break, whether a label is legible on its fill, whether a section jumps on expand. A source read will pass all of them and still ship every tell. View the built section (screenshot desktop + mobile) before checking these off. Most of the tells in this build's field notes were invisible in code and obvious on screen.

@@ -3,8 +3,8 @@ name: design-better
 description: "Design and build polished, consistent web UI with a disciplined theme-first process and a house ruleset that avoids 'vibe-coded' tells. TRIGGER when: building or restyling a website/web app/landing page/dashboard, setting up a design system or theme, or when the user asks to make a UI look better/more professional/less AI-generated. DO NOT TRIGGER for: backend-only work, pure copywriting with no UI, or non-web UI (native mobile)."
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
-  last_updated: "2026-08-03"
+  version: "0.3.0"
+  last_updated: "2026-08-05"
   relatedSkills: ["design-system", "frontend-component-build", "art-direction"]
   externalTools: ["impeccable (npx impeccable)"]
 ---
@@ -39,7 +39,7 @@ Use the AskUserQuestion tool to put concrete options in front of the user. **A r
 
 **5. Build.** Pull components from approved sources (`references/component-sources.md`) and adapt them to the theme — do not paste them in raw. Obey the core rules below and the fundamentals in `references/design-fundamentals.md`. Watch the performance/layout traps in `references/performance-and-layout.md`.
 
-**6. Self-review each section — rules are checks, applied now, not at the end.** Before moving on, run the section self-review checklist in `references/design-rules.md` AND the dictation check below. Fix drift before the next section; drift compounds.
+**6. Self-review each section — rules are checks, applied now, not at the end.** Before moving on, run the section self-review checklist in `references/design-rules.md` AND the dictation check below. Fix drift before the next section; drift compounds. **Review the rendered output, not the source** — screenshot the built section (desktop + mobile) and read it as it actually renders. The finish tells (widow lines, a label invisible on its fill, a section that jumps on expand, a paragraph cramped to too many lines) all pass a source read and are obvious on screen.
 
 **7. Critique gate.** Before declaring done, run the `impeccable` critique: `npx impeccable install` then `/impeccable critique` (or `audit`). Fix what it flags. It writes its own `DESIGN.md` — keep that and your `design-guidelines.md` consistent. Then run the anti-pattern pass in `references/anti-patterns.md` and the Three-Question Test on the result. **A clean detector run is necessary but not sufficient** — the detector catches mechanical tells (gradient text, glow, contrast) and defers taste, copy cadence, and layout rhythm to your judgment. Do not let a green scan or a high heuristic score substitute for the eye the rest of this skill trains.
 
@@ -67,7 +67,15 @@ Inline these from memory; the full catalog with rationale is in `references/desi
 - **No orphan cards.** Match the grid to the count (3 items → 3-col, not a 2-col with a lonely third).
 - **Vary section rhythm.** Adjacent sections must not all be the same card-grid; alternate layout and background so the page has cadence.
 - **Dark mode is never pure black** — use `#0a0a0a`–`#1a1a1a`, text `#e0e0e0`–`#f5f5f5`.
-- **Copy discipline.** Concrete outcomes over marketing speak ("Send invoices in 30 seconds", not "Streamline your workflow"). Limit redundancy. Go easy on em-dashes.
+- **Copy discipline.** Concrete outcomes over marketing speak ("Send invoices in 30 seconds", not "Streamline your workflow"). Limit redundancy. Go easy on em-dashes. Trust the reader — don't state what the design already conveys ("All systems operational" beside a green dot).
+
+**Finish discipline (the tells that leak even when the theme is perfect — these only show in the rendered output, so you must look at it):**
+
+- **No widows/orphans.** No heading, CTA, or short paragraph strands a lone last word. `text-wrap: balance` on headings, `pretty` on body; tune the measure or `&nbsp;`. Read every heading/CTA as it actually wraps.
+- **Tune the measure to the copy**, not a round `max-w-*`; don't let a paragraph cramp to 4 lines when 3 read better.
+- **Balance sibling sets.** Cards in a row get matching title line-counts and descriptions within a line of each other; no item stranded alone on its own line.
+- **Labels clear 4.5:1 against their own fill** (not the page), hover included — a label you can't read is a broken button.
+- **Interaction is stable.** Expanding content (accordions) reserves its space instead of growing the section; in-page anchor links smooth-scroll, never jump.
 
 ## Context nuance
 
