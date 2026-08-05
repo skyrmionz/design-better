@@ -101,6 +101,7 @@ Name every page and its sections; build and self-review one section at a time.
 ## 9. Self-review & gate
 
 - [ ] Ran the Gate 2 intake before writing code; the user's decisions above are recorded, not assumed.
+- [ ] Presented the page→section roadmap as a plan (plan mode) and got explicit user approval before building (Gate 3).
 - [ ] Every constraint in the section-0 dictation ledger is honored in every section (no silent substitution).
 - [ ] Each section passed the `design-rules.md` checklist (readable, no clipping, on-scale spacing, size-family conformance, no orphan cards, varied rhythm, states present, on-theme, motion sane, responsive).
 - [ ] Ran `npx impeccable` critique/audit; reconciled with its `DESIGN.md`; fixed findings. (Clean detector = necessary, not sufficient — judgment still applies.)

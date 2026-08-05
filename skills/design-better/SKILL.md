@@ -3,7 +3,7 @@ name: design-better
 description: "Design and build polished, consistent web UI with a disciplined theme-first process and a house ruleset that avoids 'vibe-coded' tells. TRIGGER when: building or restyling a website/web app/landing page/dashboard, setting up a design system or theme, or when the user asks to make a UI look better/more professional/less AI-generated. DO NOT TRIGGER for: backend-only work, pure copywriting with no UI, or non-web UI (native mobile)."
 license: Apache-2.0
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
   last_updated: "2026-08-05"
   relatedSkills: ["designing-experiences", "validating-designs", "extracting-brand", "applying-slds", "validating-slds"]
   externalTools: ["impeccable (npx impeccable)"]
@@ -19,7 +19,7 @@ This skill is a **design process + house ruleset**, not a component library. Cod
 
 ## The prime directive: do not one-shot
 
-The single most common failure of this skill is generating a whole page or site in one pass and *then* looking for problems. **Do not.** Building the artifact fast is not progress if it skipped the process. You pause, you plan, you collaborate, you build one section at a time. A running page that ignored the process is a failure, not a deliverable.
+The single most common failure of this skill is generating a whole page or site in one pass and *then* looking for problems. **Do not.** Building the artifact fast is not progress if it skipped the process. You pause, you plan, you collaborate, you build one section at a time. A running page that ignored the process is a failure, not a deliverable. Use **plan mode** to hold the line: intake and roadmap happen in a plan the user approves *before* any build begins (Gate 3).
 
 ## The process (gates — do them in order, do not skip ahead)
 
@@ -33,7 +33,7 @@ The single most common failure of this skill is generating a whole page or site 
 
 Use the AskUserQuestion tool to put concrete options in front of the user. **A rejected or redirected question means ask a better question, not stop asking** — never treat one pushback as license to one-shot the rest. Only infer an answer after a genuine attempt to ask has failed (no channel, or the user says "just decide"), and state the assumption you made.
 
-**GATE 3 — Roadmap by page → section, then confirm it.** Name every page, then every section within each page, explicitly (e.g. "Home: hero, logo strip, three-feature row, pricing, FAQ, footer"). Share the roadmap and the theme decisions before building. Build one section at a time and review it before moving on.
+**GATE 3 — Roadmap by page → section, in plan mode, then get explicit approval.** Name every page, then every section within each page, explicitly (e.g. "Home: hero, logo strip, three-feature row, pricing, FAQ, footer"). **Present this roadmap — together with the locked theme (Gate 1) and the intake decisions (Gate 2) — as a plan, in plan mode, and do not start building until the user approves it.** Plan mode is the enforcement mechanism for "confirm before you build": if your environment has plan mode (EnterPlanMode / ExitPlanMode), enter it to draft the roadmap and only exit once the user has accepted; if it doesn't, post the roadmap and wait for an explicit go-ahead. An approved roadmap is the contract for the build. Then build one section at a time and review it before moving on.
 
 **GATE 4 — Write `design-guidelines.md` into the project.** Copy `assets/design-guidelines.template.md` into the repo, fill it with the theme decisions from Gate 1 **and a "Dictated by the user" ledger** (see below). Refer back to it on every section. This is the single source of truth the rest of the build must match.
 
