@@ -15,6 +15,15 @@ Record every constraint the user stated verbatim. These override defaults, prese
 | 3 | <e.g. "use Aceternity components"> | component sources | ☐ |
 | 4 | <e.g. "Three.js hero motif"> | signature visual | ☐ |
 
+## Design Intent (Gate 2 — frame the problem before pixels)
+
+- **Problem statement:** <one sentence, framed as a user + job-to-be-done — not a feature list>
+- **Users:** <role + context, specific enough to disqualify "everyone">
+- **Requirements:** must <…> · should <…> · won't <…>
+- **Success criteria:** <a future state someone can check>
+- **Constraints:** <platform · brand · a11y target (default WCAG 2.1 AA) · timeline · existing design system>
+- **Open questions:** <what's still unknown — capture, don't guess>
+
 ## Decisions the user made at intake (Gate 2)
 
 - **Component sources:** <libraries (Aceternity, …) vs hand-rolled — as chosen>
@@ -96,3 +105,5 @@ Name every page and its sections; build and self-review one section at a time.
 - [ ] Each section passed the `design-rules.md` checklist (readable, no clipping, on-scale spacing, size-family conformance, no orphan cards, varied rhythm, states present, on-theme, motion sane, responsive).
 - [ ] Ran `npx impeccable` critique/audit; reconciled with its `DESIGN.md`; fixed findings. (Clean detector = necessary, not sufficient — judgment still applies.)
 - [ ] Ran the anti-pattern pass and the Three-Question Test (`anti-patterns.md`).
+- [ ] Scored the five-dimension Craft Report on the rendered output (Useful/Usable/Reliable/Coherent/Well-Crafted ≥ 7); applied its Fix Prompt (`companion-skills.md` § B).
+- [ ] Ran the WCAG 2.1 AA a11y gate — contrast, keyboard, focus-visible, semantics, never-color-alone, reduced-motion, 200% zoom (`companion-skills.md` § C).

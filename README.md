@@ -20,7 +20,8 @@ skills/design-better/
 │   ├── design-fundamentals.md       # type, spacing, color ramps, hierarchy, depth, motion, a11y, responsive
 │   ├── component-sources.md         # approved component / icon / 3D libraries + how to use each
 │   ├── performance-and-layout.md    # what not to animate, overflow traps, safe rebrands
-│   └── presets.md                   # 3 ready themes: Dark Navy Glass, F1, Warm Organic Light
+│   ├── presets.md                   # 3 ready themes: Dark Navy Glass, F1, Warm Organic Light
+│   └── companion-skills.md          # folded frameworks (Design Intent, Craft Report, WCAG a11y, brand extraction) + routing to Salesforce/SLDS & a11y skills
 └── assets/
     └── design-guidelines.template.md # per-project design doc the agent copies into your repo
 ```
@@ -60,6 +61,10 @@ Once installed, just describe the UI work:
 > "Build me a landing page for my analytics tool — make it look professional, not AI-generated."
 
 The skill will pin down a theme, ask for copy, write a `design-guidelines.md` into your project, build section-by-section against the rules, and run the critique gate before finishing.
+
+### Building for Salesforce
+
+`design-better` owns the theme and house rules regardless of stack. When the UI must be **true Salesforce** (Lightning, LWC, SLDS), it routes to sibling skills for the platform specifics: `applying-slds` (build with real Lightning Base Components, Blueprints, and `--slds-g-*` styling hooks) and `validating-slds` (score compliance). It also folds in the portable frameworks from the Salesforce `design-intelligence` skills — a **Design Intent** brief, a five-dimension **Craft Report**, and a **WCAG 2.1 AA** accessibility gate — and routes to dedicated accessibility skills for a deep audit. See `skills/design-better/references/companion-skills.md`. Those SLDS/a11y skills are separate and, where Salesforce-internal, are pointed to rather than bundled.
 
 ## Assets disclaimer
 
